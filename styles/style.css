@@ -35,6 +35,10 @@ a:hover {
      cursor: pointer;
 }
 
+.hidden {
+     display: none;
+}
+
 header {
      display: flex;
      flex-shrink: 1;
@@ -57,7 +61,7 @@ header .logo {
 header .search-bar {
      display: flex;
      align-items: center;
-     justify-content: center;
+     justify-content: right;
      flex: 1;
      max-width: 700px;
 }
@@ -81,11 +85,12 @@ header .search-bar input::placeholder {
 }
 
 header .search-bar button.search-button {
-     background-color: var(--bg-secondary);
-     border: solid 1px var(--border-color);
+     background-color: var(--bg-primmary);
+     border: none;
+     /* border: solid 1px var(--border-color);
      width: 65px;
      height: 40px;
-     border-radius: 0 50px 50px 0;
+     border-radius: 0 50px 50px 0; */
 }
 
 header .search-bar a.voice-search {
@@ -102,7 +107,8 @@ header .info-center .profile-pic img {
      border-radius: 50%;
 }
 
-header a {
+header a,
+header button {
      padding: 5px;
      border-radius: 50%;
      width: 35px;
@@ -111,6 +117,11 @@ header a {
 
 header a:hover {
      background-color: var(--nav-bg-hover);
+}
+
+header button:hover {
+     background-color: var(--nav-bg-hover);
+     cursor: pointer;
 }
 
 .container {
@@ -137,10 +148,7 @@ aside:hover::-webkit-scrollbar-thumb {
      background: var(--text-search-placeholder);
 }
 
-main {
-     position: relative;
-     margin-left: 240px;
-}
+main {}
 
 nav {
      width: 97%;
@@ -209,3 +217,37 @@ nav footer p {
      font-size: 12px;
      color: var(--text-search-placeholder);
 }
+.tags form{
+     overflow-x:scroll;
+     display: flex;
+     padding-bottom: 10px;
+     flex-wrap: nowrap;
+}
+.tag input[type="radio"] {
+     display: none;
+}
+
+.tag > span {
+     text-wrap: nowrap;
+     display: block;
+     float: left;
+     margin: 0 5px;
+     padding: 8px 8px;
+     background-color: var(--bg-secondary);
+     border-radius: 8px;
+     cursor: pointer;
+     color: var(--text-primmary);
+     transition: all ease 0.2s;
+}
+.tag input[type="radio"]:hover + span{
+     background-color: var(--radio-bg-hover);
+     cursor: pointer;
+     transition: all ease 0.2s;
+}
+.tag input[type="radio"]:checked + span{
+     padding: 8px 5px;
+     background-color: var(--radio-bg-checked);
+     color: var(--bg-primmary);
+}
+
+@media (min-width:655px) {}
