@@ -1,55 +1,68 @@
 :root {
-     --bg-primmary:#0f0f0f;
-     --bg-secondary:#222;
-     --bg-home-hover:#3d3d3d;
-     --nav-bg-hover:#272727;
-     --radio-bg-hover:#3f3f3f;
-     --radio-bg-checked:#fff;
-     --text-primmary:#fff;
-     --text-secondary:#aaa;
-     --text-hover:#f1f1f1;
-     --text-search-placeholder:#888;
-     --radio-text--checked:#0f0f0f;
-     --border-color:#303030;
+     --bg-primmary: #0f0f0f;
+     --bg-secondary: #222;
+     --bg-home-hover: #3d3d3d;
+     --nav-bg-hover: #272727;
+     --radio-bg-hover: #3f3f3f;
+     --radio-bg-checked: #fff;
+     --text-primmary: #fff;
+     --text-secondary: #aaa;
+     --text-hover: #f1f1f1;
+     --text-search-placeholder: #888;
+     --radio-text--checked: #0f0f0f;
+     --border-color: #303030;
 }
+
 * {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
 }
-body{
+
+body {
      font-family: "Roboto", sans-serif;
      background-color: var(--bg-primmary);
      color: var(--text-primmary);
      width: 98%;
      margin: auto;
 }
-a > img{
+
+a>img {
      width: 24px;
 }
-a:hover{
+
+a:hover {
      cursor: pointer;
 }
-header{
+
+header {
      display: flex;
      flex-shrink: 1;
      height: 60px;
      justify-content: space-between;
      align-items: center;
      flex-wrap: nowrap;
+     position: sticky;
+     top: 0;
+     z-index: 1;
+     background-color: var(--bg-primmary);
 }
+
 header .logo {
      display: flex;
+     padding: 0 5px;
      gap: 15px;
 }
-header .search-bar{
+
+header .search-bar {
      display: flex;
      align-items: center;
      justify-content: center;
      flex: 1;
      max-width: 700px;
 }
-header .search-bar input{
+
+header .search-bar input {
      background-color: var(--bg-primmary);
      border: solid 1px var(--border-color);
      width: 100%;
@@ -62,38 +75,137 @@ header .search-bar input{
      border-radius: 50px 0 0 50px;
      color: var(--text-primmary);
 }
-header .search-bar input::placeholder{
+
+header .search-bar input::placeholder {
      color: var(--text-search-placeholder);
 }
-header .search-bar button.search-button{
+
+header .search-bar button.search-button {
      background-color: var(--bg-secondary);
      border: solid 1px var(--border-color);
      width: 65px;
      height: 40px;
      border-radius: 0 50px 50px 0;
 }
-header .search-bar a.voice-search{
+
+header .search-bar a.voice-search {
      margin: 0 15px;
 }
-header .info-center{
+
+header .info-center {
      padding: 10px;
      display: flex;
      gap: 15px;
 }
-header .info-center .profile-pic img{
+
+header .info-center .profile-pic img {
      border-radius: 50%;
 }
-header a{
+
+header a {
      padding: 5px;
      border-radius: 50%;
      width: 35px;
      height: 35px;
 }
-header a:hover{
+
+header a:hover {
      background-color: var(--nav-bg-hover);
-     ;
-     
 }
 
+.container {
+     display: flex;
+     margin-top: 10px;
+}
 
+aside {
+     width: 240px;
+     height: calc(100dvh - 70px);
+     position: fixed;
+     overflow-y: scroll;
+}
 
+aside::-webkit-scrollbar {
+     width: 8px;
+}
+
+aside::-webkit-scrollbar-track {
+     background: var(--bg-primmary);
+}
+
+aside:hover::-webkit-scrollbar-thumb {
+     background: var(--text-search-placeholder);
+}
+
+main {
+     position: relative;
+     margin-left: 240px;
+}
+
+nav {
+     width: 97%;
+     margin: auto;
+}
+
+nav a {
+     display: flex;
+     align-items: center;
+     gap: 25px;
+     padding: 10px;
+     text-decoration: none;
+     color: var(--text-primmary);
+     font-size: 14px;
+     border-radius: 12px;
+     width: 95%;
+}
+
+nav div a:hover {
+     background-color: var(--nav-bg-hover);
+}
+
+nav div.bd-bottom {
+     border-bottom: solid 1px var(--border-color);
+}
+
+nav>div {
+     padding: 10px 0;
+}
+
+nav div.home {
+     padding-top: 0;
+}
+
+nav div.home a:first-child {
+     background-color: var(--nav-bg-hover);
+}
+
+nav div.home a:first-child:hover {
+     background-color: var(--bg-home-hover);
+}
+
+nav .subscriptions img.channel-logo-24 {
+     border-radius: 50%;
+}
+
+nav div h3 {
+     padding: 5px 0;
+     font-size: 16px;
+}
+
+nav footer {
+     padding: 15px 0;
+     width: 90%;
+}
+
+nav footer a {
+     display: inline;
+     padding: 5px;
+     font-size: 13px;
+     text-wrap: nowrap;
+     color: var(--text-secondary);
+}
+
+nav footer p {
+     font-size: 12px;
+     color: var(--text-search-placeholder);
+}
