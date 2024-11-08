@@ -1,0 +1,99 @@
+:root {
+     --bg-primmary:#0f0f0f;
+     --bg-secondary:#222;
+     --bg-home-hover:#3d3d3d;
+     --nav-bg-hover:#272727;
+     --radio-bg-hover:#3f3f3f;
+     --radio-bg-checked:#fff;
+     --text-primmary:#fff;
+     --text-secondary:#aaa;
+     --text-hover:#f1f1f1;
+     --text-search-placeholder:#888;
+     --radio-text--checked:#0f0f0f;
+     --border-color:#303030;
+}
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body{
+     font-family: "Roboto", sans-serif;
+     background-color: var(--bg-primmary);
+     color: var(--text-primmary);
+     width: 98%;
+     margin: auto;
+}
+a > img{
+     width: 24px;
+}
+a:hover{
+     cursor: pointer;
+}
+header{
+     display: flex;
+     flex-shrink: 1;
+     height: 60px;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: nowrap;
+}
+header .logo {
+     display: flex;
+     gap: 15px;
+}
+header .search-bar{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex: 1;
+     max-width: 700px;
+}
+header .search-bar input{
+     background-color: var(--bg-primmary);
+     border: solid 1px var(--border-color);
+     width: 100%;
+     max-width: 550px;
+     min-width: 100px;
+     flex: 1;
+     height: 40px;
+     padding: 5px 20px;
+     font-size: 17px;
+     border-radius: 50px 0 0 50px;
+     color: var(--text-primmary);
+}
+header .search-bar input::placeholder{
+     color: var(--text-search-placeholder);
+}
+header .search-bar button.search-button{
+     background-color: var(--bg-secondary);
+     border: solid 1px var(--border-color);
+     width: 65px;
+     height: 40px;
+     border-radius: 0 50px 50px 0;
+}
+header .search-bar a.voice-search{
+     margin: 0 15px;
+}
+header .info-center{
+     padding: 10px;
+     display: flex;
+     gap: 15px;
+}
+header .info-center .profile-pic img{
+     border-radius: 50%;
+}
+header a{
+     padding: 5px;
+     border-radius: 50%;
+     width: 35px;
+     height: 35px;
+}
+header a:hover{
+     background-color: var(--nav-bg-hover);
+     ;
+     
+}
+
+
+
