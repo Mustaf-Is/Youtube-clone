@@ -23,6 +23,10 @@ body {
      font-family: "Roboto", sans-serif;
      background-color: var(--bg-primmary);
      color: var(--text-primmary);
+     width: 100%;
+}
+
+body .wraper {
      width: 98%;
      margin: auto;
 }
@@ -41,6 +45,7 @@ a:hover {
 
 header {
      display: flex;
+     width: 100%;
      flex-shrink: 1;
      height: 60px;
      justify-content: space-between;
@@ -59,11 +64,8 @@ header .logo {
 }
 
 header .search-bar {
-     display: flex;
-     align-items: center;
-     justify-content: right;
-     flex: 1;
-     max-width: 700px;
+     display: none;
+
 }
 
 header .search-bar input {
@@ -85,16 +87,21 @@ header .search-bar input::placeholder {
 }
 
 header .search-bar button.search-button {
-     background-color: var(--bg-primmary);
+     background-color: var(--bg-secondary);
      border: none;
-     /* border: solid 1px var(--border-color);
+     border: solid 1px var(--border-color);
      width: 65px;
      height: 40px;
-     border-radius: 0 50px 50px 0; */
+     border-radius: 0 50px 50px 0;
 }
 
 header .search-bar a.voice-search {
      margin: 0 15px;
+     background-color: var(--nav-bg-hover);
+}
+
+header .search-bar a.voice-search:hover {
+     background-color: var(--bg-home-hover);
 }
 
 header .info-center {
@@ -140,15 +147,19 @@ aside::-webkit-scrollbar {
      width: 8px;
 }
 
-aside::-webkit-scrollbar-track {
+form::-webkit-scrollbar {
+     height: 8px;
+}
+
+aside::-webkit-scrollbar-track,
+form::-webkit-scrollbar {
      background: var(--bg-primmary);
 }
 
-aside:hover::-webkit-scrollbar-thumb {
+aside:hover::-webkit-scrollbar-thumb,
+form:hover::-webkit-scrollbar-thumb {
      background: var(--text-search-placeholder);
 }
-
-main {}
 
 nav {
      width: 97%;
@@ -217,17 +228,27 @@ nav footer p {
      font-size: 12px;
      color: var(--text-search-placeholder);
 }
-.tags form{
-     overflow-x:scroll;
+
+.tags {
+     padding: 0 10px;
+     width: 100%;
+     position: fixed;
+     background-color: var(--bg-primmary);
+     top: 60px;
+}
+
+.tags form {
+     overflow-x: scroll;
      display: flex;
      padding-bottom: 10px;
      flex-wrap: nowrap;
 }
+
 .tag input[type="radio"] {
      display: none;
 }
 
-.tag > span {
+.tag>span {
      text-wrap: nowrap;
      display: block;
      float: left;
@@ -239,15 +260,154 @@ nav footer p {
      color: var(--text-primmary);
      transition: all ease 0.2s;
 }
-.tag input[type="radio"]:hover + span{
+
+.tag input[type="radio"]:hover+span {
      background-color: var(--radio-bg-hover);
      cursor: pointer;
      transition: all ease 0.2s;
 }
-.tag input[type="radio"]:checked + span{
+
+.tag input[type="radio"]:checked+span {
      padding: 8px 5px;
      background-color: var(--radio-bg-checked);
      color: var(--bg-primmary);
 }
 
-@media (min-width:655px) {}
+main .video-container {
+     width: 95%;
+     margin: 40px auto;
+     display: grid;
+}
+
+main .video-container .video {
+     padding: 20px 5px;
+}
+
+main .video-container .video .video-header {
+     position: relative;
+     z-index: -1;
+}
+
+main .video-container .video span {
+     position: absolute;
+     bottom: 10px;
+     right: 10px;
+     font-size: 12px;
+     font-weight: bold;
+     padding: 5px;
+     background-color: var(--bg-secondary);
+     border-radius: 5px;
+}
+
+main .video-container .video .thumbnail {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+     aspect-ratio: 16 / 9;
+     border-radius: 12px;
+}
+
+main .video-container .video .vide-info {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     gap: 10px;
+     padding: 10px 0;
+}
+
+main .video-container .video .vide-info .video-description {
+     flex: 1;
+}
+
+main .video-container .video .video-info img {
+     align-self: flex-start;
+}
+
+main .video-container .video .channel-logo-48 {
+     width: 40px;
+     border-radius: 50%;
+}
+
+main .video-container .video h2 {
+     font-size: 16px;
+}
+
+main .video-container .video p {
+     font-size: 14px;
+     color: var(--text-secondary);
+}
+
+main .shorts {
+     width: 95%;
+     margin: 10px auto;
+}
+
+main .shorts .shorts-header {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     padding: 15px 5px;
+     gap: 10px;
+}
+
+main .shorts .shorts-container {
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px;
+}
+
+main .shorts .shorts-header img {
+     width: 24px;
+}
+
+main .shorts .short-video img {
+     width: 100%;
+     height: auto;
+}
+
+main .shorts .short-video .shorts-info {
+     width: 100%;
+     display: flex;
+     align-items: flex-start;
+     padding: 10px 5px;
+}
+
+main .shorts .short-video .shorts-info img {
+     width: 24px;
+}
+
+main .shorts .short-video .shorts-info .shorts-description {
+     flex: 1;
+
+}
+
+main .shorts .short-video .shorts-info h2 {
+     font-size: 14px;
+     line-height: 1.5;
+     font-weight: 500;
+}
+
+main .shorts .short-video .shorts-info p {
+     font-size: 12px;
+     color: var(--text-secondary);
+     padding: 5px 0;
+}
+
+@media (min-width:670px) {
+     header .search-bar {
+          display: flex !important;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          flex: 1;
+          max-width: 700px;
+     }
+     header .md-hidden{
+          display: none;
+     }
+     main .video-container{
+          grid-template-columns: repeat(2, 1fr);
+     }
+}
