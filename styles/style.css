@@ -152,8 +152,12 @@ form::-webkit-scrollbar {
 }
 
 aside::-webkit-scrollbar-track,
+body::-webkit-scrollbar,
 form::-webkit-scrollbar {
      background: var(--bg-primmary);
+}
+body::-webkit-scrollbar-thumb{
+     background: var(--text-search-placeholder);
 }
 
 aside:hover::-webkit-scrollbar-thumb,
@@ -407,30 +411,34 @@ main .shorts .short-video .shorts-info p {
           flex: 1;
           max-width: 700px;
      }
-     header .md-hidden{
+
+     header .md-hidden {
           display: none;
      }
-     main .video-container{
+
+     main .video-container {
           grid-template-columns: repeat(2, 1fr);
           gap: 5px;
      }
 }
 
-@media (min-width:850px){
-     main .shorts .shorts-container{
+@media (min-width:850px) {
+     main .shorts .shorts-container {
           grid-template-columns: repeat(4, 1fr);
           gap: 5px;
      }
 }
 
-@media (min-width:1200px){
-     main .video-container{
+@media (min-width:1200px) {
+     main .video-container {
           grid-template-columns: repeat(3, 1fr);
      }
-     aside.hidden{
-          display: block !important; 
+
+     aside.hidden {
+          display: block !important;
      }
-     main{
+
+     main {
           margin-left: 250px;
      }
 }
