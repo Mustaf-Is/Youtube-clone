@@ -1,0 +1,436 @@
+:root {
+     --bg-primmary: #0f0f0f;
+     --bg-secondary: #222;
+     --bg-home-hover: #3d3d3d;
+     --nav-bg-hover: #272727;
+     --radio-bg-hover: #3f3f3f;
+     --radio-bg-checked: #fff;
+     --text-primmary: #fff;
+     --text-secondary: #aaa;
+     --text-hover: #f1f1f1;
+     --text-search-placeholder: #888;
+     --radio-text--checked: #0f0f0f;
+     --border-color: #303030;
+}
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: "Roboto", sans-serif;
+     background-color: var(--bg-primmary);
+     color: var(--text-primmary);
+     width: 100%;
+}
+
+body .wraper {
+     width: 98%;
+     margin: auto;
+}
+
+a>img {
+     width: 24px;
+}
+
+a:hover {
+     cursor: pointer;
+}
+
+.hidden {
+     display: none;
+}
+
+header {
+     display: flex;
+     width: 100%;
+     flex-shrink: 1;
+     height: 60px;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: nowrap;
+     position: sticky;
+     top: 0;
+     z-index: 1;
+     background-color: var(--bg-primmary);
+}
+
+header .logo {
+     display: flex;
+     padding: 0 5px;
+     gap: 15px;
+}
+
+header .search-bar {
+     display: none;
+
+}
+
+header .search-bar input {
+     background-color: var(--bg-primmary);
+     border: solid 1px var(--border-color);
+     width: 100%;
+     max-width: 550px;
+     min-width: 100px;
+     flex: 1;
+     height: 40px;
+     padding: 5px 20px;
+     font-size: 17px;
+     border-radius: 50px 0 0 50px;
+     color: var(--text-primmary);
+}
+
+header .search-bar input::placeholder {
+     color: var(--text-search-placeholder);
+}
+
+header .search-bar button.search-button {
+     background-color: var(--bg-secondary);
+     border: none;
+     border: solid 1px var(--border-color);
+     width: 65px;
+     height: 40px;
+     border-radius: 0 50px 50px 0;
+}
+
+header .search-bar a.voice-search {
+     margin: 0 15px;
+     background-color: var(--nav-bg-hover);
+}
+
+header .search-bar a.voice-search:hover {
+     background-color: var(--bg-home-hover);
+}
+
+header .info-center {
+     padding: 10px;
+     display: flex;
+     gap: 15px;
+}
+
+header .info-center .profile-pic img {
+     border-radius: 50%;
+}
+
+header a,
+header button {
+     padding: 5px;
+     border-radius: 50%;
+     width: 35px;
+     height: 35px;
+}
+
+header a:hover {
+     background-color: var(--nav-bg-hover);
+}
+
+header button:hover {
+     background-color: var(--nav-bg-hover);
+     cursor: pointer;
+}
+
+.container {
+     display: flex;
+     margin-top: 10px;
+}
+
+aside {
+     width: 240px;
+     height: calc(100dvh - 70px);
+     position: fixed;
+     overflow-y: scroll;
+}
+
+aside::-webkit-scrollbar {
+     width: 8px;
+}
+
+form::-webkit-scrollbar {
+     height: 8px;
+}
+
+aside::-webkit-scrollbar-track,
+form::-webkit-scrollbar {
+     background: var(--bg-primmary);
+}
+
+aside:hover::-webkit-scrollbar-thumb,
+form:hover::-webkit-scrollbar-thumb {
+     background: var(--text-search-placeholder);
+}
+
+nav {
+     width: 97%;
+     margin: auto;
+}
+
+nav a {
+     display: flex;
+     align-items: center;
+     gap: 25px;
+     padding: 10px;
+     text-decoration: none;
+     color: var(--text-primmary);
+     font-size: 14px;
+     border-radius: 12px;
+     width: 95%;
+}
+
+nav div a:hover {
+     background-color: var(--nav-bg-hover);
+}
+
+nav div.bd-bottom {
+     border-bottom: solid 1px var(--border-color);
+}
+
+nav>div {
+     padding: 10px 0;
+}
+
+nav div.home {
+     padding-top: 0;
+}
+
+nav div.home a:first-child {
+     background-color: var(--nav-bg-hover);
+}
+
+nav div.home a:first-child:hover {
+     background-color: var(--bg-home-hover);
+}
+
+nav .subscriptions img.channel-logo-24 {
+     border-radius: 50%;
+}
+
+nav div h3 {
+     padding: 5px 0;
+     font-size: 16px;
+}
+
+nav footer {
+     padding: 15px 0;
+     width: 90%;
+}
+
+nav footer a {
+     display: inline;
+     padding: 5px;
+     font-size: 13px;
+     text-wrap: nowrap;
+     color: var(--text-secondary);
+}
+
+nav footer p {
+     font-size: 12px;
+     color: var(--text-search-placeholder);
+}
+
+.tags {
+     padding: 0 10px;
+     width: 100%;
+     position: fixed;
+     background-color: var(--bg-primmary);
+     top: 60px;
+}
+
+.tags form {
+     overflow-x: scroll;
+     display: flex;
+     padding-bottom: 10px;
+     flex-wrap: nowrap;
+}
+
+.tag input[type="radio"] {
+     display: none;
+}
+
+.tag>span {
+     text-wrap: nowrap;
+     display: block;
+     float: left;
+     margin: 0 5px;
+     padding: 8px 8px;
+     background-color: var(--bg-secondary);
+     border-radius: 8px;
+     cursor: pointer;
+     color: var(--text-primmary);
+     transition: all ease 0.2s;
+}
+
+.tag input[type="radio"]:hover+span {
+     background-color: var(--radio-bg-hover);
+     cursor: pointer;
+     transition: all ease 0.2s;
+}
+
+.tag input[type="radio"]:checked+span {
+     padding: 8px 5px;
+     background-color: var(--radio-bg-checked);
+     color: var(--bg-primmary);
+}
+
+main .video-container {
+     width: 95%;
+     margin: 40px auto;
+     display: grid;
+}
+
+main .video-container .video {
+     padding: 20px 5px;
+}
+
+main .video-container .video .video-header {
+     position: relative;
+     z-index: -1;
+}
+
+main .video-container .video span {
+     position: absolute;
+     bottom: 10px;
+     right: 10px;
+     font-size: 12px;
+     font-weight: bold;
+     padding: 5px;
+     background-color: var(--bg-secondary);
+     border-radius: 5px;
+}
+
+main .video-container .video .thumbnail {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+     aspect-ratio: 16 / 9;
+     border-radius: 12px;
+}
+
+main .video-container .video .vide-info {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     gap: 10px;
+     padding: 10px 0;
+}
+
+main .video-container .video .vide-info .video-description {
+     flex: 1;
+}
+
+main .video-container .video .video-info img {
+     align-self: flex-start;
+}
+
+main .video-container .video .channel-logo-48 {
+     width: 40px;
+     border-radius: 50%;
+}
+
+main .video-container .video h2 {
+     font-size: 16px;
+}
+
+main .video-container .video p {
+     font-size: 14px;
+     color: var(--text-secondary);
+}
+
+main .shorts {
+     width: 95%;
+     margin: 10px auto;
+}
+
+main .shorts .shorts-header {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     padding: 15px 5px;
+     gap: 10px;
+}
+
+main .shorts .shorts-container {
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px;
+}
+
+main .shorts .shorts-header img {
+     width: 24px;
+}
+
+main .shorts .short-video img {
+     width: 100%;
+     height: auto;
+}
+
+main .shorts .short-video .shorts-info {
+     width: 100%;
+     display: flex;
+     align-items: flex-start;
+     padding: 10px 5px;
+}
+
+main .shorts .short-video .shorts-info img {
+     width: 24px;
+}
+
+main .shorts .short-video .shorts-info .shorts-description {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     flex-wrap: nowrap;
+}
+
+main .shorts .short-video .shorts-info h2 {
+     font-size: 14px;
+     line-height: 1.5;
+     font-weight: 500;
+}
+
+main .shorts .short-video .shorts-info p {
+     font-size: 12px;
+     color: var(--text-secondary);
+     padding: 5px 0;
+}
+
+@media (min-width:670px) {
+     header .search-bar {
+          display: flex !important;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          flex: 1;
+          max-width: 700px;
+     }
+     header .md-hidden{
+          display: none;
+     }
+     main .video-container{
+          grid-template-columns: repeat(2, 1fr);
+          gap: 5px;
+     }
+}
+
+@media (min-width:850px){
+     main .shorts .shorts-container{
+          grid-template-columns: repeat(4, 1fr);
+          gap: 5px;
+     }
+}
+
+@media (min-width:1200px){
+     main .video-container{
+          grid-template-columns: repeat(3, 1fr);
+     }
+     aside.hidden{
+          display: block !important; 
+     }
+     main{
+          margin-left: 250px;
+     }
+}
